@@ -5,7 +5,7 @@ import Hero from './components/Hero'
 // import StayOptions from './components/StayOptions'
 import AboutMe from './components/AboutMe'
 import OptionsCards from './components/OptionsCards'
-import CardsCollection from './components/CardsCollection'  
+// import CardsCollection from './components/CardsCollection'  
 import ImageSlider   from './components/ImageSlider'
 // import JoinCommunity from './components/JoinCommunity'
 import EventCards from './components/EventCards'
@@ -14,6 +14,7 @@ import Newsletter from './components/Newsletter'
 import Footer from './components/Footer'
 import Testimonials from './components/Testimonials'
 import CookieConsentBanner from './components/CookieConsentBanner'
+import Coaching from './components/Coaching'
 
 function App() {
 
@@ -29,7 +30,8 @@ function App() {
       {/* <EventCards/> */}
       <OptionsCards/>
       <ImageSlider/>
-      <CardsCollection/>
+      <Coaching/>
+      {/* <CardsCollection/> */}
       <Testimonials/>
       <Newsletter/>
       <Footer/>

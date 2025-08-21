@@ -17,7 +17,7 @@ const Hero = () => {
       }}
     >
       {/* Dark Overlay Only on Background */}
-<div className="absolute inset-0 z-0 bg-black bg-opacity-50"></div>
+<div className="absolute inset-0 z-0 bg-gradient-to-br from-black/70 to-transparent"></div>
     </div>
   </div>
 
@@ -29,23 +29,22 @@ const Hero = () => {
 
 
   {/* CENTER: Headline + Paragraph */}
-  <div className='w-full md:w-1/2  md:text-left  space-y-2 md:space-y-6 pt-20 px-10 '>
-    <motion.h1 
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.2, delay: 1 }}
-      className='text-xl font-heading md:text-4xl lg:text-5xl font-bold max-w-md leading-relaxed'
-    >
-      <span className='text-light sm:text uppercase'>
-        Empieza tu transformación
-      </span>
+<div className='w-full md:w-1/2 space-y-2 pt-20 px-10'>
+  <motion.h1 
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.2, delay: 1 }}
+    className='text-4xl font-heading md:text-5xl lg:text-7xl font-bold text-light md:leading-relaxed'
+  >
+    <span className="block">Empieza tu</span>
+    <span className="block">transformación</span>
     </motion.h1>
 
     <motion.p
       initial={{ opacity: 0, y: -30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2, delay: 1.2 }}
-      className='text-slate-300 font-bodytext-md'
+      className='text-slate-300 font-body pb-7'
     >
       Descubre tu fuerza interior, encuentra claridad  <br /> y crea la vida que mereces.
     </motion.p>

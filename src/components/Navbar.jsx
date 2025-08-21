@@ -26,7 +26,7 @@ const Navbar = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="fixed top-0 font-body right-0 left-0 backdrop-blur-lg bg-primary/80 shadow-sm z-50"
+        className="fixed top-0 font-body right-0 left-0 backdrop-blur-lg bg-transparent shadow-sm z-50"
       >
         <div className="w-full mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-10 md:h-20 h-20">
           {/* Logo */}
@@ -63,7 +63,7 @@ const Navbar = () => {
                 className={`text-sm uppercase font-body font-light relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-0.5 after:bg-secondary after:transition-all ${
                   activeLink === link.href
                     ? "text-gray-600 after:w-full"
-                    : "text-white hover:text-secondary after:w-0 hover:after:w-full"
+                    : "text-btt hover:text-secondary after:w-0 hover:after:w-full"
                 }`}
               >
                 {link.label}

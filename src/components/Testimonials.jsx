@@ -5,51 +5,51 @@ import 'swiper/css/navigation';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { motion } from "framer-motion";
 
-import testimonial1 from "../assets/testimonial1.jpg"
-import testimonial2 from "../assets/testimonial2.jpg";
-import testimonial3 from "../assets/testimonial3.png";
+// import testimonial1 from "../assets/testimonial1.jpg"
+// import testimonial2 from "../assets/testimonial2.jpg";
+// import testimonial3 from "../assets/testimonial3.png";
 
 
 const testimonials = [
   {
     id: 1,
-    name: " – Mamá de Sofía, 7 años", 
-    image: testimonial1,
-    text: "Gracias por ayudarnos a sonreír en medio de la tormenta. Esta mochila con los dibujos de José nos acompañó al hospital. Nos dio fuerza y esperanza.",
+    name: " – Zay Nuba, guionista y directora de proyectos", 
+    // image: testimonial1,
+    text: "Encarna es la persona que quiers tener cerca en cualquier proyecto en el que te embarques por su optimismo y fuerza.",
   },
   {
     id: 2,
-    name: "– Lourdes, compradora solidaria",
-    image: testimonial2,
-    text: "No sabía que una camiseta podía significar tanto. Hoy la uso con orgullo sabiendo que ayudé a alguien.",
+    name: "– Martín Tello Castro, general manager y senior executive",
+    // image: testimonial2,
+    text: "Comprometida, sensible, empática, capaz de ponerse en la piel de aquél a quien ayuda, receptiva y permeable a nuestros enfoques. En definitiva capaz de entender tu situación, por lo que propone soluciones a tu medida y las particulariza a tus necesidades concretas.",
   },
   {
     id: 3,
-    name: " – Profe Elena, colegio colaborador",
-    image: testimonial3,
-    text: "José Manuel enseñó a mi hija a correr, hoy su sueño sigue corriendo gracias a ustedes.",
+    name: " – Jose Manuel",
+    // image: testimonial3,
+    text: "Encarni, dos semanas después de haber acabado mi programa de coaching reafirmo que ha sido una de las mejores inversiones de mi vida. Me encuentro lleno de energía, vitalidad y en el trabajo mi rendimiento ha mejorado. Soy más feliz y así lo demuestro. Muchas gracias!!!",
   },
 
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonios" className="py-16 px-4 max-w-7xl mx-auto ">
+    <section id="testimonios" className="py-16 px-14  inset-0 z-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent max-w-7xl mx-auto ">
       <motion.div 
         
         className="text-center mb-12"
       >
         <motion.h2 
           
-          className="text-3xl md:text-4xl font-bold mb-4"
+          className="text-2xl text-primary md:text-3xl font-heading mb-0"
         >
-          Lo que dicen quienes han recibido y quienes han dado
+          Voces de Transformación
         </motion.h2>
         <motion.p 
          
-          className="text-gray-600"
+          className="text-lg text-btt font-body mb-4 italic"
         >
-          Nuestros niños, sus familias, nuestros donantes… todos tienen algo en común: el corazón lleno.  <br />Aquí compartimos algunos mensajes que nos recuerdan por qué hacemos esto.
+          A través de retiros, cursos y coaching uno a uno, <br />nuestra comunidad ha encontrado claridad, equilibrio y crecimiento duradero.
         </motion.p>
       </motion.div>
 {/* Swiper cards */}
@@ -85,21 +85,21 @@ const TestimonialsSection = () => {
 
   whileHover={{ scale: 1.03, boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)" }}
   transition={{ type: "spring", stiffness: 300 }}
-  className="text-center bg-white p-4 rounded-lg shadow-md h-full flex flex-col"
+  className="text-center bg-transparent border border-secondary p-4  shadow-md h-full flex flex-col"
 >
-
+{/* 
                 <motion.div 
                  
                   className="w-24 h-24 mx-auto mb-4"
                   
-                >
-                  <motion.img
+                > */}
+                  {/* <motion.img
                    
                     src={testimonial.image}
                     alt={testimonial.name}
                     className="w-full h-full object-cover "
-                  />
-                </motion.div>
+                  /> */}
+                {/* </motion.div> */}
                 <motion.div 
                 
                   className="flex justify-center mb-2"
@@ -116,12 +116,12 @@ const TestimonialsSection = () => {
                 </motion.div>
                 <motion.h3 
                 
-                  className="font-semibold text-xl mb-3"
+                  className="font-semibold text-btt font-heading text-xl mb-3"
                 >
                   {testimonial.name}
                 </motion.h3>
                 <motion.p 
-                  className="text-gray-600"
+                  className="text-slate-100 font-body drop-shadow-sm"
                 > {testimonial.text}
                 </motion.p>
               </motion.div>

@@ -64,8 +64,8 @@ const OptionsCards = () => {
   return (
     <section
     
-      id='comoayudar'
-      className='max-w-7xl mx-auto px-4 py-16 bg-cover bg-center relative opacity-90'
+      id='cursos'
+      className='max-w-7xl mx-auto px-14 py-16 bg-cover bg-center relative opacity-90'
       //  style={{ backgroundImage: `url(${backgroundImg})` }} 
     >
       {/* Heading */}
@@ -153,11 +153,11 @@ const OptionsCards = () => {
       {/* Button */}
       <div className='text-center mt-12'>
         <motion.button
-          className=' text-white cursor-pointer px-8 py-3  font-medium  relative  bg-btt text-sm       uppercase hover:bg-white hover:text-btt hover:border hover:border-btt'
+          className=' text-white cursor-pointer px-8 py-3  font-medium  relative  bg-btt text-sm       uppercase hover:bg-white hover:text-btt hover:border hover:border-btt font-body'
           // whileHover={{ scale: 1.08, backgroundColor: '#b91c1c' }}
           // transition={{ duration: 0.15, type: 'spring', stiffness: 500 }}
         >
-          Contacta con nosotros
+          Inscríbete ahora
           <div className='absolute -z-10 w-full h-full   blur-lg top-0'></div>
         </motion.button>
       </div>
