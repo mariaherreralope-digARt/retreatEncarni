@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-import { FiX } from "react-icons/fi";
-
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
+
+
+import { useModal } from "./ModalContext";
+import GlobalModal from "./GlobalModal"; 
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("#inicio");
-  const [contactFormOpen, setContactFormOpen] = useState(false);
+
+  const { openModal } = useModal();
 
   const navLinks = [
     { href: "#quiensoy", label: "Quien Soy" },
@@ -18,8 +21,9 @@ const Navbar = () => {
     { href: "#testimonios", label: "Testimonios" },
   ];
 
-  const openContactForm = () => setContactFormOpen(true);
-  const closeContactForm = () => setContactFormOpen(false);
+  const handleOpenContactForm = () => {
+    openModal(<GlobalModal />);
+  };
 
   return (
     <>
@@ -28,9 +32,9 @@ const Navbar = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="fixed top-0 font-body right-0 left-0  shadow-sm z-30"
+        className="fixed top-0 font-body right-0 left-0 shadow-sm z-30"
       >
-        <div className="w-full backdrop-blur-lg bg-transparent mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-10  h-20">
+        <div className="w-full backdrop-blur-lg bg-transparent mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-10 h-20">
           {/* Logo */}
           <a
             href="#inicio"
@@ -73,9 +77,9 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Contact button */}
+          {/* Contact button (desktop) */}
           <motion.button
-            onClick={openContactForm}
+            onClick={handleOpenContactForm}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -85,7 +89,7 @@ const Navbar = () => {
               stiffness: 100,
               damping: 10,
             }}
-            className="hidden md:block bg-btt text-sm text-white px-6 py-2.5  hover:bg-white hover:text-btt hover:border hover:border-btt font-light uppercase transition-all "
+            className="hidden md:block bg-btt text-sm text-white px-6 py-2.5 hover:bg-white hover:text-btt hover:border hover:border-btt font-light uppercase transition-all"
           >
             Contacta
           </motion.button>
@@ -125,7 +129,7 @@ const Navbar = () => {
                     className={`block text-sm font-medium font-body py-2 ${
                       activeLink === link.href
                         ? "text-btt"
-                        : "text-gray-600hover:text-gray-900"
+                        : "text-gray-600 hover:text-gray-900"
                     }`}
                     href={link.href}
                   >
@@ -135,9 +139,9 @@ const Navbar = () => {
                 <button
                   onClick={() => {
                     setIsMenuOpen(false);
-                    openContactForm();
+                    handleOpenContactForm();
                   }}
-                  className="w-auto bg-btt font-body text-white px-6 py-2.5 hover:bg-white hover:border hover:border-btt hover:text-btt font-medium transition-all  "
+                  className="w-auto bg-btt font-body text-white px-6 py-2.5 hover:bg-white hover:border hover:border-btt hover:text-btt font-medium transition-all"
                 >
                   Contáctanos
                 </button>
@@ -145,106 +149,6 @@ const Navbar = () => {
             </motion.div>
           )}
         </AnimatePresence>
-        
-      {/* Contact Form Modal */}
-      <AnimatePresence>
-        {contactFormOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0, y: 30 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.8, opacity: 0, y: 30 }}
-              transition={{
-                type: "spring",
-                damping: 30,
-                stiffness: 200,
-                duration: 0.8,
-              }}
-              className="bg-white dark:bg-secondary/50  shadow-xl w-full max-w-md p-6"
-            >
-              <div className="flex justify-between items-center mb-4">
-                <h1 className="text-xl font-heading text-gray-600 dark:text-gray-100">
-                  Contacta con Nosotros
-                </h1>
-                <button
-                  onClick={closeContactForm}
-                  aria-label="Close contact form"
-                >
-                  <FiX className="w-6 h-6 text-gray-00 dark:text-gray-100" />
-                </button>
-              </div>
-
-              {/* Input Forms */}
-              <form
-                action="https://formsubmit.co/mariaherreralope@gmail.com"
-                method="POST"
-                className="space-y-4"
-              >
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="box" />
-                <input
-                  type="hidden"
-                  name="_autoresponse"
-                  value="Gracias por tu mensaje. Nos pondremos en contacto pronto."
-                />
-
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-body font-medium text-gray-800 dark:text-gray-100 mb-1"
-                  >
-                    Nombre
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    placeholder="Tu Nombre"
-                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-secondary focus:border-secondary bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-800 dark:text-gray-100 mb-1"
-                  >
-                    Correo Electrónico
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="Tu Correo Electrónico"
-                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-secondary focus:border-secondary bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-800 dark:text-gray-100 mb-1"
-                  >
-                    Mensaje
-                  </label>
-                  <textarea
-                    rows={4}
-                    id="message"
-                    placeholder="¿Cómo podemos ayudarte?"
-                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-secondary focus:border-secondary bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                  />
-                </div>
-                <motion.button className="w-full px-4 py-2 text-white bg-gradient-to-r from-btt to-primary hover:from-primary hover:to-btt transition-all duration-300 font-body ">
-                  Enviar Mensaje
-                </motion.button>
-              </form>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       </motion.nav>
     </>
   );
