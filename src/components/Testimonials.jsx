@@ -43,11 +43,11 @@ const TestimonialsSection = () => {
           
           className="text-2xl text-primary md:text-3xl font-heading mb-0"
         >
-          Voces de Transformación
+          VoceS de TransformacióN
         </motion.h2>
         <motion.p 
          
-          className="text-lg text-btt font-body mb-4 italic"
+          className="text-lg text-btt font-body mb-4 mt-4 italic"
         >
           A través de retiros, cursos y coaching uno a uno, <br />nuestra comunidad ha encontrado claridad, equilibrio y crecimiento duradero.
         </motion.p>

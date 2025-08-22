@@ -81,9 +81,9 @@ const ImageSlider = () => {
   return (
     <section id="retiros" className="relative mx-24 py-12">
 
-      <div className="text-center mb-10 mt-0 pt-0 text-gray-700 drop-shadow-md">
-        <h1 className="text-2xl text-primary md:text-3xl font-heading mb-0">RETIROS</h1>
-        <p className="text-lg text-btt font-body mb-4 italic">Sumérgete en uno de nuestros retiros, donde cada experiencia está diseñada para inspirar calma, renovación y crecimiento personal.</p>
+      <div className="text-center mb-10 mt-16 pt-0 text-gray-700 drop-shadow-md">
+        <h1 className="text-2xl text-primary md:text-3xl font-heading mb-0">RetiroS</h1>
+        <p className="text-lg text-btt font-body mb-4 mt-4 italic">Sumérgete en uno de nuestros retiros, donde cada experiencia está diseñada para inspirar calma, renovación y crecimiento personal.</p>
       </div>
 
       {/* Image Slider Container */}

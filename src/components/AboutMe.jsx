@@ -2,7 +2,7 @@ import aboutImg from "../assets/aboutImg.png";
 
 const AboutMe = () => {
   return (
-    <section id='about' className='max-w-8xl mx-auto px-8 md:px-24 py-16 md:py-24'>
+    <section id='quiensoy' className='max-w-8xl mx-auto px-8 md:px-24 py-16 md:pt-24'>
       <div className='flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20'>
 
         {/* LEFT column: Text */}
