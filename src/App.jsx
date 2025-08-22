@@ -3,7 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import AboutMe from './components/AboutMe'
-import OptionsCards from './components/OptionsCards'
+import Cursos from './components/Cursos'
 import ImageSlider from './components/ImageSlider'
 import Newsletter from './components/Newsletter'
 import Footer from './components/Footer'
@@ -23,7 +23,7 @@ function App() {
           <Navbar />
           <Hero />
           <AboutMe />
-          <OptionsCards />
+          <Cursos />
           <ImageSlider />
           <Coaching />
           <Testimonials />
